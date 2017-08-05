@@ -8,6 +8,8 @@ var config = {
 };
   firebase.initializeApp(config);
 
+  var database = firebase.database();
+
 $("#addDestinationButton").on("click", function(event) {
   event.preventDefault();
   var trainName = $("#trainNameInput").val().trim();
