@@ -12,11 +12,13 @@ $("#addDestinationButton").on("click", function(event) {
   event.preventDefault();
   var trainName = $("#trainNameInput").val().trim();
   var destination = $("#destinationInput").val().trim();
-  var firstTrainTime = moment($("#firstTrainInput").val().trim(), "DD/MM/YY").format("X");
+  var firstTrainTime = moment($("#firstTrainInput").val().trim(), "HH:mm").format("X");
   var frequency = $("#frequencyInput").val().trim();
-
   console.log(trainName);
   console.log(destination);
   console.log(firstTrainTime);
   console.log(frequency);
+
+});
+
 
