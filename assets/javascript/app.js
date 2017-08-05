@@ -34,6 +34,11 @@ $("#addDestinationButton").on("click", function(event) {
   console.log(newDestinationComplete.destinationBase);
   console.log(newDestinationComplete.firstTrainTimeBase);
   console.log(newDestinationComplete.frequencyBase);
+
+  $("#trainNameInput").val("");
+  $("#destinationInput").val("");
+  $("#firstTrainInput").val("");
+  $("#frequencyInput").val("");
 });
 
 
