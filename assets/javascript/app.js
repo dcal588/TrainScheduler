@@ -19,6 +19,19 @@ $("#addDestinationButton").on("click", function(event) {
   console.log(firstTrainTime);
   console.log(frequency);
 
+  var newDestinationComplete = {
+    trainNameBase: trainName,
+    destinationBase: destination,
+    firstTrainTimeBase: firstTrainTime,
+    frequencyBase: frequency
+  };
+
+  database.ref().push(newDestinationComplete);
+
+  console.log(newDestinationComplete.trainNameBase);
+  console.log(newDestinationComplete.destinationBase);
+  console.log(newDestinationComplete.firstTrainBase);
+  console.log(newDestinationComplete.frequencyBase);
 });
 
 
