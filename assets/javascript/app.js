@@ -16,6 +16,7 @@ $("#addDestinationButton").on("click", function(event) {
   var destination = $("#destinationInput").val().trim();
   var firstTrainTime = moment($("#firstTrainInput").val().trim(), "HH:mm").format("X");
   var frequency = $("#frequencyInput").val().trim();
+  
   console.log(trainName);
   console.log(destination);
   console.log(firstTrainTime);
@@ -39,6 +40,20 @@ $("#addDestinationButton").on("click", function(event) {
   $("#destinationInput").val("");
   $("#firstTrainInput").val("");
   $("#frequencyInput").val("");
+});
+
+database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+  console.log(childSnapshot.val());
+
+  var trainName = childSnapshot.val().trainNameBase;
+  var destination = childSnapshot.val().destinationBase;
+  var firstTrainTime = childSnapshot.val().firstTrainTimeBase;
+  var frequency = childSnapshot.val().frequencyBase;
+
+  var formatFirstTrainTime = moment.unix(firstTrainTime).format("HH:mm");
+  console.log(formatFirstTrainTime);
+
 });
 
 
