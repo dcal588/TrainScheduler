@@ -32,7 +32,7 @@ $("#addDestinationButton").on("click", function(event) {
 
   console.log(newDestinationComplete.trainNameBase);
   console.log(newDestinationComplete.destinationBase);
-  console.log(newDestinationComplete.firstTrainBase);
+  console.log(newDestinationComplete.firstTrainTimeBase);
   console.log(newDestinationComplete.frequencyBase);
 });
 
