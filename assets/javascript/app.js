@@ -59,8 +59,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 //   console.log(moment.unix(unformatNextArrival).format("HH:mm"));
 
 //   var formatTimeLeft
-  var nextArrival = moment().subtract(firstTrainTime, "minutes").format("HH:mm");
-  console.log("Next Arrival: "+nextArrival);
-});
-
+  // var timeSinceFirst = moment().subtract(firstTrainTime, "minutes").format("HH:mm");
+  // console.log("Next Arrival: "+timeSinceFirst);
+  
+  var formatFirstTrainTime = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+  var timeNow = moment();
+  var timeDifference = moment().diff(moment(formatFirstTrainTime), "minutes");
 
