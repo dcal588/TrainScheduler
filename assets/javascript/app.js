@@ -68,4 +68,11 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log("First Arrival: " +minusYearFirstTrainTime);
   console.log("Time Now: " +timeNow);
   console.log("difference: " +timeDifference);
+  var timeRemainder = timeDifference % frequency;
+  var minutesTillTrain = frequency - timeRemainder;
+  var nextTrainTime = moment().add(minutesTillTrain, "minutes");
+  var formatNextTrainTime = moment(nextTrainTime).format("hh:mm");
+  console.log(minutesTillTrain);
+  console.log(formatNextTrainTime);
+});
 
