@@ -62,6 +62,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   // var timeSinceFirst = moment().subtract(firstTrainTime, "minutes").format("HH:mm");
   // console.log("Next Arrival: "+timeSinceFirst);
   
+  var formatFrequency
   var minusYearFirstTrainTime = moment(firstTrainTime, "hh:mm").subtract(1, "years");
   var timeNow = moment();
   var timeDifference = moment().diff(moment(minusYearFirstTrainTime), "minutes");
@@ -74,5 +75,8 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var formatNextTrainTime = moment(nextTrainTime).format("hh:mm");
   console.log(minutesTillTrain);
   console.log(formatNextTrainTime);
+  
+  $("#trainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
+  frequency + "</td><td>" + formatNextTrainTime + "</td><td>" + minutesTillTrain + "</td></tr>")
 });
 
