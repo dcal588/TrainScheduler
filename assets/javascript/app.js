@@ -61,8 +61,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 //   var formatTimeLeft
   // var timeSinceFirst = moment().subtract(firstTrainTime, "minutes").format("HH:mm");
   // console.log("Next Arrival: "+timeSinceFirst);
-  
-  var formatFrequency
   var minusYearFirstTrainTime = moment(firstTrainTime, "hh:mm").subtract(1, "years");
   var timeNow = moment();
   var timeDifference = moment().diff(moment(minusYearFirstTrainTime), "minutes");
