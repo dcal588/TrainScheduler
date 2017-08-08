@@ -51,14 +51,16 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var firstTrainTime = childSnapshot.val().firstTrainTimeBase;
   var frequency = childSnapshot.val().frequencyBase;
 
-  var formatFirstTrainTime = moment.unix(firstTrainTime).format("HH:mm");
-  console.log(formatFirstTrainTime);
+  // var formatFirstTrainTime = moment.unix(firstTrainTime).format("HH:mm");
+  // console.log(formatFirstTrainTime);
 
-  var unformatNextArrival = moment().diff(moment.unix(firstTrainTime, "X"), "hours minutes");
-  console.log(unformatNextArrival);
- // console.log(moment.unix(unformatNextArrival).format("HH:mm"));
+//   var unformatNextArrival = moment().diff(moment.unix(firstTrainTime, "X"), "minutes");
+//   console.log(unformatNextArrival);
+//   console.log(moment.unix(unformatNextArrival).format("HH:mm"));
 
-  var formatTimeLeft
+//   var formatTimeLeft
+  var nextArrival = moment().subtract(firstTrainTime, "minutes").format("HH:mm");
+  console.log("Next Arrival: "+nextArrival);
 });
 
 
